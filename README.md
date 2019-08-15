@@ -5,6 +5,10 @@ A simple notification dispatch mechanism that enables the broadcast of informati
 
 BroadcastJS is a tiny library for a notification dispatch mechanism that enables the broadcast of information to registered observers. Basically, it helps you escalate your data without caring about the context within your code. So, it enables you to send data to a different part of your program.
 
+# Install
+```
+npm install @arguiot/broadcast.js --save
+```
 # Notification
 
 A `Notification` is a container for information broadcast through a notification center to all registered observers.
@@ -45,7 +49,7 @@ If your web app uses notifications extensively, you may want to create and post 
 # Demo
 
 ```js
-const { Notification, NotificationCenter } = require("broadcast.js")
+const { Notification, NotificationCenter } = require("@arguiot/broadcast.js")
 
 
 // Somewhere in your program

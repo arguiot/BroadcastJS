@@ -1,5 +1,5 @@
 {
-  "name": "broadcast.js",
+  "name": "@arguiot/broadcast.js",
   "version": "1.0.0",
   "description": "A simple notification dispatch mechanism that enables the broadcast of information to registered observers within your code.",
   "main": "dist/broadcast.js",
