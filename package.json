@@ -2,9 +2,9 @@
   "name": "broadcast.js",
   "version": "1.0.0",
   "description": "A simple notification dispatch mechanism that enables the broadcast of information to registered observers within your code.",
-  "main": "index.js",
+  "main": "dist/broadcast.js",
   "scripts": {
-    "test": "npm test"
+    "test": "eye"
   },
   "repository": {
     "type": "git",
@@ -13,10 +13,13 @@
   "keywords": [
     "broadcast,notification,global"
   ],
-  "author": "install",
-  "license": "ISC",
+  "author": "Arthur Guiot",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/arguiot/BroadcastJS/issues"
   },
-  "homepage": "https://github.com/arguiot/BroadcastJS#readme"
+  "homepage": "https://github.com/arguiot/BroadcastJS#readme",
+  "devDependencies": {
+    "eye.js": "^1.1.2"
+  }
 }
