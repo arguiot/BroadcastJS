@@ -6,7 +6,7 @@ class BroadcastJSNotification {
 }
 class NotificationCenter {
 	constructor() {
-		this.observers = []
+		this.observers = new Map()
 	}
 	get default() {
 		const exportGlobal = (name, object) => {
@@ -27,22 +27,18 @@ class NotificationCenter {
 		return BroadcastJS_Shared_Instance
 	}
 	addObserver(name, callback, reference = null) {
-		this.observers.push([name, callback, reference])
+		this.observers.set([name, reference], [callback, reference])
 	}
 	removeObserver(name, reference = null) {
-		this.observers.forEach((o, i) => {
-			if (o[0] == name && o[2] == reference) {
-				this.observers.splice(i, 1)
-			}
-		})
+		this.observers.delete([name, reference])
 	}
 	post(notification) {
 		const name = notification.name
-		this.observers.forEach((o, i) => {
-			if (o[0] == name) {
-				o[1](notification.object)
+		for (const n of this.observers.keys()) {
+			if (n[0] == name) {
+				this.observers.get(n)(notification.object)
 			}
-		})
+		}
 	}
 }
 

@@ -8,13 +8,17 @@ eye.test("Notification", "node",
 	$ => $(msg.name).Equal("test"),
 	$ => $(msg.object.data).Equal("Message")
 )
-NotificationCenter.default.addObserver("test", data => {
+
+const callback = data => {
 	console.log(data.data)
-})
+}
+NotificationCenter.default.addObserver("test", callback)
+
+const first = NotificationCenter.default.observers.keys().next().value
 
 eye.test("NotificationCenter", "node",
-	$ => $(NotificationCenter.default.observers.length).Equal(1),
-	$ => $(NotificationCenter.default.observers[0][0]).Equal("test")
+	$ => $(NotificationCenter.default.observers.has(first)).Equal(true),
+	$ => $(NotificationCenter.default.observers.get(first)).Equal(callback)
 )
 
 NotificationCenter.default.post(msg)
