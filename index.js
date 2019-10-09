@@ -27,15 +27,15 @@ class NotificationCenter {
 		return BroadcastJS_Shared_Instance
 	}
 	addObserver(name, callback, reference = null) {
-		this.observers.set([name, reference], [callback, reference])
+		this.observers.set(`${name}, ${reference}`, callback)
 	}
 	removeObserver(name, reference = null) {
-		this.observers.delete([name, reference])
+		this.observers.delete(`${name}, ${reference}`)
 	}
 	post(notification) {
 		const name = notification.name
 		for (const n of this.observers.keys()) {
-			if (n[0] == name) {
+			if (n.split(",")[0] == name) {
 				this.observers.get(n)(notification.object)
 			}
 		}

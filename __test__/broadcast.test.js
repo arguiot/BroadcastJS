@@ -22,3 +22,4 @@ eye.test("NotificationCenter", "node",
 )
 
 NotificationCenter.default.post(msg)
+NotificationCenter.default.removeObserver("test")
