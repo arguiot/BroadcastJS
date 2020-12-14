@@ -1,10 +1,12 @@
 {
   "name": "@arguiot/broadcast.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple notification dispatch mechanism that enables the broadcast of information to registered observers within your code.",
   "main": "dist/broadcast.js",
   "scripts": {
-    "test": "eye"
+    "test": "eye",
+    "dev": "parcel broadcast.ts --global BroadcastJS",
+    "build": "parcel build broadcast.ts --global BroadcastJS"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,8 @@
   },
   "homepage": "https://github.com/arguiot/BroadcastJS#readme",
   "devDependencies": {
-    "eye.js": "^1.1.2"
+    "eye.js": "^1.1.2",
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^4.1.3"
   }
 }
