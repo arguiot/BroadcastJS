@@ -12,7 +12,7 @@ class NotificationManager {
 	constructor() {
 		this.observers = new Map()
 	}
-	get default() {
+	get default(): NotificationManager {
 		if (typeof globalThis.BroadcastJS_Shared_Instance == "undefined") {
 			globalThis.BroadcastJS_Shared_Instance = new NotificationManager()
 		}
